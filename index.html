@@ -1,0 +1,70 @@
+<!doctype html>
+<meta charset="utf-8">
+<html>
+<head>
+	<link rel="stylesheet" href="style.css"> 
+      <script type="text/javascript">
+      
+      function commander(id){
+            sessionStorage.setItem("produit",id);
+            window.location="commande.html";
+      };
+      function redirect(){parent.location="panier.html"};
+      function initialiser(){
+            if(sessionStorage.getItem("cmd")==undefined || sessionStorage.getItem("cmd")== null){
+                  sessionStorage.setItem("cmd",0);
+                  document.getElementById("data").innerText = 0;
+            }
+            else 
+            document.getElementById("data").innerText = sessionStorage.getItem("cmd");
+      };
+      </script>
+</head>
+<body onload="initialiser();">
+<header>
+      <h1>Beauty Shop </h1>
+     <img src="images/panier.png" width="30px" height="30px" id="panier" onclick="redirect();"><span class="txt" id="data"></span>
+      <!--<h4>Historique</h4> -->
+
+</header>
+<aside id="pub">
+      <img src="images/ads.png" width="600px" height="100px">
+</aside>
+	<section>
+	<article id="parfum">
+	  <details open="open">
+       <summary>Parfum </summary>
+       <figure><img src="images/parfum1.png" width="200px" height="200px" onclick="commander(this.id);" id="parfum1"><figcaption>Parfum 1</figcaption></figure>
+       <figure><img src="images/parfum2.png" width="200px" height="200px" id="parfum2" onclick="commander(this.id);"><figcaption>Parfum 2</figcaption></figure>
+       <figure><img src="images/parfum3.png" width="200px" height="200px" id="parfum3" onclick="commander(this.id);"><figcaption>Parfum 3</figcaption></figure>
+       <figure><img src="images/parfum4.png" width="200px" height="200px" id="parfum4" onclick="commander(this.id);"><figcaption>Parfum 4</figcaption></figure>
+       <figure><img src="images/parfum5.png" width="200px" height="200px" id="parfum5" onclick="commander(this.id);"><figcaption>Parfum 5</figcaption></figure>
+      </details>
+	</article>
+	
+	<article id="creme">
+	   <details>
+       <summary>Crème de beauté </summary>
+       <figure><img src="images/creme1.png" width="200px" height="200px" id="creme1" onclick="commander(this.id);"><figcaption>Creme 1</figcaption></figure>
+       <figure><img src="images/creme2.png" width="200px" height="200px" id="creme2" onclick="commander(this.id);"><figcaption>Creme 2</figcaption></figure>
+       <figure><img src="images/creme3.png" width="200px" height="200px" id="creme3" onclick="commander(this.id);"><figcaption>Creme 3</figcaption></figure>
+       <figure><img src="images/creme4.png" width="200px" height="200px" id="creme4" onclick="commander(this.id);"><figcaption>Creme 4</figcaption></figure>
+       <figure><img src="images/creme5.png" width="200px" height="200px" id="creme5" onclick="commander(this.id);"><figcaption>Creme 5</figcaption></figure>
+       <figure><img src="images/creme6.png" width="200px" height="200px" id="creme6" onclick="commander(this.id);"><figcaption>Creme 6</figcaption></figure>
+       </details>
+	</article>
+	<article id="maqs">
+	   <details>
+        <summary>Maquillage </summary>
+       <figure><img src="images/maq1.png" width="200px" height="200px" id="maq1" onclick="commander(this.id);"><figcaption>Maquillage 1</figcaption></figure>
+       <figure><img src="images/maq2.png" width="200px" height="200px" id="maq2" onclick="commander(this.id);"><figcaption>Maquillage 2</figcaption></figure>
+       <figure><img src="images/maq3.png" width="200px" height="200px" id="maq3" onclick="commander(this.id);"><figcaption>Maquillage 3</figcaption></figure>
+       <figure><img src="images/maq4.png" width="200px" height="200px" id="maq4" onclick="commander(this.id);"><figcaption>Maquillage 4</figcaption></figure>
+       <figure><img src="images/maq5.png" width="200px" height="200px" id="maq5" onclick="commander(this.id);"><figcaption>Maquillage 5</figcaption></figure>
+        </details>
+	</article>
+
+</section>
+
+</body>
+</html>

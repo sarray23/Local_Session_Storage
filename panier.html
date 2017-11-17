@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+        	<title>Beauty Shop</title>
+            <link rel="stylesheet" href="style.css"> 
+	        <script>
+	           function ShowPanier(){
+                    var contenu=""; 
+                    var email="";
+                   // if(sessionStorage.length-2===0)
+                  //  alert("panier vide");
+                    for(var i=0; i<sessionStorage.length; i++){
+                        if(sessionStorage.getItem("panier"+i)!==null)
+                        {
+                            contenu="<tr>";
+                            JSON.parse( sessionStorage.getItem("panier"+i), function(key, value) {
+                                if (key === '') { return false; }
+                                if(key==="qte"|| key==="prix"|| key==="produit")
+                                    contenu+="<td>"+value+"</td>"; 
+                                else if(key==="email")
+                                email=value;
+                            }); 
+                            contenu+="</tr>";
+                            document.getElementById("contenu").innerHTML+=contenu;  
+                            document.getElementById("mail").value=email;  
+                        }
+                    }
+                }
+	       </script>
+        </head>
+
+        <body onload="ShowPanier();">
+            <section >
+                <header>
+                    <h1>Beauty Shop </h1>
+                </header>
+
+                <label class="mail">Email:</label><input type="text" id="mail" disabled >
+                <table id="contenu">
+                    <tr>
+                       <th>Libelle</th>
+                       <th>Quantite</th>
+                       <th>PU</th>     
+                    </tr>
+                    
+                </table>
+                    
+            </section>
+        
+        </body>
+    </html>

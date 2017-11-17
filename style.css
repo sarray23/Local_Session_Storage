@@ -1,0 +1,67 @@
+body{
+	margin: 3%;
+	
+
+}
+figure{
+	float: left;
+    margin: 5px;
+    padding: 15px;
+    border: 1px solid black;
+    
+}
+article{
+	clear: both;
+}
+details{
+
+	background:-webkit-linear-gradient(#E78BF4,#FFECFF);
+	padding:10px 0px 10px 0px;
+}
+h4{
+	float: right;
+}
+form{
+	clear: both;
+}
+#pub{
+	position: absolute;
+	top: 10px;
+	right: 30%;
+}
+#panier{
+	float: right;
+}
+.txt{
+   
+    font-size:16px;
+    color: red;
+    float: right;
+    border-radius: 30px;
+    background-color: white;  
+}
+
+input[type="text"] {
+    width: 500px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1150px) {
+	aside{
+		display: none;
+	}
+}
+
+table{
+	width:100%;
+}
+
+th {
+    background-color: #E78BF4;
+    color: white;
+    border: 1px  grey;
+}
+td{
+	text-align: center;
+}

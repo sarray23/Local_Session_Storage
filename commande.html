@@ -1,0 +1,51 @@
+<!doctype html>
+<meta charset="utf-8">
+<html>
+<head>
+	<link rel="stylesheet" href="style.css"> 
+	<script type="text/javascript">
+	var pr;
+	function getProduit(){
+	  pr=sessionStorage.getItem("produit");
+	  document.images["produit"].src = "images/"+pr+".png";
+	  
+	}
+
+	function Save(){
+		
+               var article = '{"produit" : "'+pr+'","qte" : "'+document.getElementById("qte").value+'","prix" : "'+document.getElementById("prix").value+'","email" : "'+document.getElementById("email").value+'" }';
+        
+                sessionStorage.setItem("panier"+sessionStorage.length,article);
+                
+                sessionStorage.setItem("cmd",sessionStorage.length-2);
+                parent.location="index.html";
+                  return false;
+            }
+	</script>
+</head>
+<body onload="getProduit();">
+<header>
+      <h1>Beauty Shop </h1>
+</header>
+<section>
+<figure>
+	<img width="200px" height="200px" id="produit">
+	<figcaption></figcaption>
+</figure>
+<p id="lib">Italian fashion house Prada was founded by Mario Prada in 1913. In collaboration with his brother Martino, the pair opened a leathergoods and luggage store called Fratelli Prada (Prada Brothers) in Milan. Mario's daughter Luisa took over the business from her father, and in turn, her daughter Miuccia Prada, would take over for her in 1978. The company as we know it today has evolved under Miuccia Prada's direction.</p>
+</section>
+
+<section>
+	<form>
+	<fieldset>
+	<legend>Commander :  </legend>
+	<label>Quantité :  </label> <input id="qte" type="number" min="1" max="10" value="1" autofocus><br>
+	<label>Prix :  </label><input id="prix" type="number" disabled value="200"><br>
+	<label>Email :  </label><input id="email" type="email" required>
+	<!-- <input type="submit"> -->
+	<button onclick="return Save();">Valider</button>
+	</fieldset>
+	</form>
+</section>
+</body>
+</html>
